@@ -32,3 +32,10 @@ logs
 
 # Claude Code local config
 .claude/
+
+# Vercel CLI project link
+.vercel
+
+.vercel
+node_modules/
+dist/
