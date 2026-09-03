@@ -1,0 +1,562 @@
+/* ============================================================
+   Tokens, base styles, buttons, and every keyframe in the site
+   ============================================================ */
+
+:root {
+  /* palette — warm farmyard */
+  --cream: #fffaf0;
+  --cream-2: #fdf3e0;
+  --ink: #2b2118;
+  --ink-soft: #5c4b3a;
+  --muted: #8a7763;
+  --line: #ecdfc9;
+  --white: #ffffff;
+
+  --brand: #2f8f46; /* pasture green */
+  --brand-dark: #1f6b33;
+  --brand-soft: #e6f5e9;
+
+  --amber: #f59e0b; /* feather amber */
+  --amber-dark: #b45309;
+  --amber-soft: #fef3c7;
+
+  --rust: #c2410c;
+  --red: #dc2626;
+
+  --shadow-sm: 0 2px 8px rgba(74, 51, 25, 0.07);
+  --shadow: 0 12px 30px -12px rgba(74, 51, 25, 0.25);
+  --shadow-lg: 0 28px 60px -24px rgba(74, 51, 25, 0.4);
+
+  --radius: 18px;
+  --radius-lg: 28px;
+  --container: 1180px;
+
+  --font: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  /* `clip` not `hidden`: the tilted marquee sticks out a few px either side and
+     `hidden` would leave the page sideways-scrollable by that much */
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5.4vw, 3.9rem);
+}
+h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+}
+h3 {
+  font-size: 1.16rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  position: relative;
+}
+
+/* highlighted words — a hand-drawn looking underline that grows in */
+.hl {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  /* keeps the -1 pseudo behind the text but in front of the section bg */
+  isolation: isolate;
+}
+.hl::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 0.06em;
+  height: 0.34em;
+  background: linear-gradient(90deg, var(--amber), #fcd34d);
+  border-radius: 4px;
+  z-index: -1;
+  transform-origin: left center;
+  animation: swipe 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.pill-light {
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--amber-dark);
+}
+.pill-hero {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--brand-dark);
+  box-shadow: var(--shadow-sm);
+}
+.pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+/* ---------------- buttons ---------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.6rem;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s,
+    background 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: #fff;
+  box-shadow: 0 10px 24px -10px rgba(47, 143, 70, 0.9);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px -12px rgba(47, 143, 70, 0.95);
+}
+/* light sweep across the button on hover */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 -60%;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+.btn-primary:hover::after {
+  left: 120%;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 2px var(--line);
+}
+.btn-ghost:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: inset 0 0 0 2px var(--amber), var(--shadow-sm);
+}
+.btn-sm {
+  padding: 0.55rem 1.05rem;
+  font-size: 0.86rem;
+}
+.btn-block {
+  width: 100%;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s,
+    border-color 0.3s;
+}
+
+.chip {
+  padding: 0.5rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+.chip:hover {
+  border-color: var(--amber);
+  transform: translateY(-2px);
+}
+.chip.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+/* ============================================================
+   Scroll reveal
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+@keyframes swipe {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.55;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-2deg);
+  }
+}
+@keyframes peck {
+  0%, 62%, 100% {
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(13deg);
+  }
+  78% {
+    transform: rotate(0deg);
+  }
+  86% {
+    transform: rotate(13deg);
+  }
+}
+@keyframes hop {
+  0%, 72%, 100% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(-9px);
+  }
+  88% {
+    transform: translateY(0);
+  }
+}
+@keyframes blink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+@keyframes wobble {
+  0%, 100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes wag {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-6deg);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes glow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes grow-bar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes drift {
+  from {
+    transform: translateX(-140px);
+  }
+  to {
+    transform: translateX(620px);
+  }
+}
+@keyframes fall {
+  0% {
+    transform: translate(0, -40px) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(60px, 380px) rotate(320deg);
+    opacity: 0;
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(34px, -28px) scale(1.08);
+  }
+  66% {
+    transform: translate(-24px, 22px) scale(0.95);
+  }
+}
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  80%, 100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+@keyframes run-across {
+  from {
+    transform: translateX(-8vw) scaleX(1);
+  }
+  to {
+    transform: translateX(108vw) scaleX(1);
+  }
+}
+@keyframes hatch-lid {
+  0%, 55% {
+    transform: translateY(0) rotate(0deg);
+  }
+  70%, 92% {
+    transform: translateY(-26px) rotate(-22deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+@keyframes hatch-peep {
+  0%, 55% {
+    transform: translateY(10px);
+    opacity: 0.4;
+  }
+  72%, 92% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0.4;
+  }
+}
+@keyframes rise {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   Icon animations (classes referenced from Icons.jsx)
+   ============================================================ */
+.icon .ic-eye {
+  transform-origin: center;
+  animation: blink 5s ease-in-out infinite;
+}
+.icon .ic-comb {
+  transform-origin: 45px 22px;
+  animation: wag 3.2s ease-in-out infinite;
+}
+.icon .ic-tail {
+  transform-origin: 24px 34px;
+  animation: sway 4s ease-in-out infinite;
+}
+.icon .ic-wobble,
+.icon.icon-egg > .ic-wobble {
+  transform-origin: 32px 56px;
+  animation: wobble 3s ease-in-out infinite;
+}
+.icon .ic-hop {
+  animation: hop 3.6s ease-in-out infinite;
+}
+.icon .ic-glow {
+  animation: glow 2.2s ease-in-out infinite;
+}
+.icon .ic-grain {
+  animation: hop 2.4s ease-in-out infinite;
+}
+.icon .ic-sway {
+  transform-origin: 30px 55px;
+  animation: sway 4.5s ease-in-out infinite;
+}
+.icon .ic-wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 2.4s linear infinite;
+}
+.icon .ic-bar {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: grow-bar 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.icon .ic-draw {
+  stroke-dasharray: 200;
+  animation: dash 1.4s ease-out both;
+}
+.icon.rot-up {
+  transform: rotate(-90deg);
+}
+
+/* hovering a card makes its bird react */
+.card:hover .icon .ic-hop {
+  animation-duration: 1.1s;
+}
+.card:hover .icon .ic-comb {
+  animation-duration: 0.8s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
