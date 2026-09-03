@@ -1,5 +1,5 @@
 import Icon from './Icons.jsx'
-import { business, nav, products } from '../data/site.js'
+import { business, nav, products, phoneHref } from '../data/site.js'
 
 export default function Footer() {
   const go = (e, id) => {
@@ -27,7 +27,7 @@ export default function Footer() {
             <a href={`https://wa.me/${business.whatsapp}`} aria-label="WhatsApp" target="_blank" rel="noreferrer">
               <Icon name="whatsapp" size={18} />
             </a>
-            <a href={`tel:${business.phone}`} aria-label="Call">
+            <a href={phoneHref} aria-label="Call">
               <Icon name="phone" size={18} />
             </a>
             <a href={`mailto:${business.email}`} aria-label="Email">
@@ -68,7 +68,7 @@ export default function Footer() {
             <li>{business.address}</li>
             <li>{business.hours}</li>
             <li>
-              <a href={`tel:${business.phone}`}>{business.phone}</a>
+              <a href={phoneHref}>{business.phone}</a>
             </li>
             <li>
               <a href={`mailto:${business.email}`}>{business.email}</a>

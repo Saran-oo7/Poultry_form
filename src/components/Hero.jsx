@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <span className="pill pill-hero">
-            <span className="dot" /> Fresh batch lifting every week
+            <span className="dot" /> Now taking orders for the next batch
           </span>
 
           <h1>
@@ -63,10 +63,10 @@ export default function Hero() {
               <Icon name="check" size={14} /> Live weight shown at the gate
             </li>
             <li>
-              <Icon name="check" size={14} /> Vaccinated, vet-checked stock
+              <Icon name="check" size={14} /> Open all days, 7 AM – 8 PM
             </li>
             <li>
-              <Icon name="check" size={14} /> Delivery inside 60 km
+              <Icon name="check" size={14} /> Straight from the shed
             </li>
           </ul>
         </div>
@@ -74,17 +74,17 @@ export default function Hero() {
         <div className="hero-art">
           <FarmScene />
           <div className="float-card float-card-1">
-            <Icon name="egg" size={30} />
+            <Icon name="hen" size={30} />
             <div>
-              <strong>3,200 eggs</strong>
-              <span>collected today</span>
+              <strong>10,000 birds</strong>
+              <span>every cycle</span>
             </div>
           </div>
           <div className="float-card float-card-2">
             <Icon name="chart" size={30} />
             <div>
-              <strong>1.52 FCR</strong>
-              <span>last batch average</span>
+              <strong>1.5 FCR</strong>
+              <span>batch average</span>
             </div>
           </div>
         </div>

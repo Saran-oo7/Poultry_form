@@ -6,9 +6,9 @@ const items = [
   { icon: 'chick', text: 'Day-old chicks' },
   { icon: 'rooster', text: 'Country chicken' },
   { icon: 'feed', text: 'Poultry feed' },
-  { icon: 'leaf', text: 'Dried manure' },
-  { icon: 'truck', text: 'Free local delivery' },
-  { icon: 'shield', text: 'Bio-secure sheds' },
+  { icon: 'chart', text: 'Weighed at the gate' },
+  { icon: 'truck', text: '6 batches a year' },
+  { icon: 'shield', text: 'Contract growing' },
 ]
 
 export default function Marquee() {

@@ -6,7 +6,6 @@ import Products from './components/Products.jsx'
 import GrowthCycle from './components/GrowthCycle.jsx'
 import Gallery from './components/Gallery.jsx'
 import Partners from './components/Partners.jsx'
-import Testimonials from './components/Testimonials.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import FloatingCTA from './components/FloatingCTA.jsx'
@@ -23,7 +22,6 @@ export default function App() {
         <GrowthCycle />
         <Gallery />
         <Partners />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />

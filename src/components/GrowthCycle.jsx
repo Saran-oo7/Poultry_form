@@ -13,8 +13,8 @@ export default function GrowthCycle() {
         <Reveal className="section-head">
           <span className="pill pill-light">How a bird grows here</span>
           <h2>
-            Day 0 to market weight in <span className="hl">42 days</span>, logged
-            shed by shed
+            Day 0 to market weight in about{' '}
+            <span className="hl">40 days</span>
           </h2>
           <p>
             The same programme runs on our own batches and on the batches we grow on
@@ -56,20 +56,20 @@ export default function GrowthCycle() {
               <GrowthCurve />
               <div className="growth-figures">
                 <div>
-                  <strong>2.40 kg</strong>
-                  <span>live weight at day 42</span>
+                  <strong>1.90 kg</strong>
+                  <span>average live weight at lifting</span>
                 </div>
                 <div>
-                  <strong>1.52</strong>
+                  <strong>1.5</strong>
                   <span>feed conversion ratio</span>
                 </div>
                 <div>
-                  <strong>2.8%</strong>
-                  <span>average mortality</span>
+                  <strong>6</strong>
+                  <span>batches a year</span>
                 </div>
                 <div>
-                  <strong>14 days</strong>
-                  <span>downtime between batches</span>
+                  <strong>15,000 kg</strong>
+                  <span>average live weight a batch</span>
                 </div>
               </div>
             </div>

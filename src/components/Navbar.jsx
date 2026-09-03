@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Icon from './Icons.jsx'
-import { business, nav } from '../data/site.js'
+import { business, nav, phoneHref } from '../data/site.js'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -70,7 +70,7 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <a className="btn btn-sm btn-primary nav-cta" href={`tel:${business.phone}`}>
+          <a className="btn btn-sm btn-primary nav-cta" href={phoneHref}>
             <Icon name="phone" size={16} /> Call now
           </a>
         </nav>

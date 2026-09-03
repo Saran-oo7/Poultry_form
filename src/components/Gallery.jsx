@@ -14,8 +14,8 @@ import Reveal from './Reveal.jsx'
 const tiles = [
   {
     id: 'brooder',
-    title: 'Brooding shed, day 3',
-    note: 'Heat lamps at 33°C, paper feeding',
+    title: 'Brooding shed',
+    note: 'Chicks under the brooder',
     tone: 'warm',
     icons: ['brooder', 'chick', 'chick'],
     photo: null,
@@ -23,7 +23,7 @@ const tiles = [
   {
     id: 'feeding',
     title: 'Feeding line',
-    note: 'Pan feeders topped up four times a day',
+    note: 'Feed down through the day',
     tone: 'sand',
     icons: ['feed', 'hen'],
     photo: null,
@@ -31,7 +31,7 @@ const tiles = [
   {
     id: 'eggs',
     title: 'Morning collection',
-    note: 'Graded and trayed before 9 AM',
+    note: 'Collected and trayed daily',
     tone: 'cream',
     icons: ['egg', 'egg', 'egg'],
     photo: null,
@@ -39,7 +39,7 @@ const tiles = [
   {
     id: 'range',
     title: 'Country bird range',
-    note: 'Open run from first light to dusk',
+    note: 'Country birds on the range',
     tone: 'green',
     icons: ['rooster', 'leaf'],
     photo: null,
@@ -47,7 +47,7 @@ const tiles = [
   {
     id: 'health',
     title: 'Vaccination round',
-    note: 'Lasota and IBD on schedule',
+    note: 'Vaccination on schedule',
     tone: 'blue',
     icons: ['shield', 'chick'],
     photo: null,
@@ -55,7 +55,7 @@ const tiles = [
   {
     id: 'loading',
     title: 'Night loading',
-    note: 'Weighed, crated and away by 4 AM',
+    note: 'Weighed, crated and away',
     tone: 'dusk',
     icons: ['truck', 'hen'],
     photo: null,
@@ -86,8 +86,8 @@ export default function Gallery() {
             A day here, from the <span className="hl">brooder to the truck</span>
           </h2>
           <p>
-            Buyers are welcome to walk the sheds before booking — call ahead so we
-            can hand you a pair of shed slippers.
+            Buyers are welcome to see the sheds before booking. Ring ahead and come
+            across any day between 7 in the morning and 8 at night.
           </p>
         </Reveal>
 

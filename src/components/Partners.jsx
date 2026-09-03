@@ -27,10 +27,10 @@ export default function Partners() {
               </span>
               <div className="partner-body">
                 <h3>{p.name}</h3>
-                <span className="partner-type">{p.type}</span>
-                <p>{p.scope}</p>
+                {p.type && <span className="partner-type">{p.type}</span>}
+                {p.scope && <p>{p.scope}</p>}
               </div>
-              <span className="partner-since">Since {p.since}</span>
+              {p.since && <span className="partner-since">Since {p.since}</span>}
             </Reveal>
           ))}
         </div>

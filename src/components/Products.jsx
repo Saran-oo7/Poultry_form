@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import Icon from './Icons.jsx'
 import Reveal from './Reveal.jsx'
-import { products, business } from '../data/site.js'
+import { products, phoneHref } from '../data/site.js'
 
 const filters = [
   { id: 'all', label: 'Everything' },
   { id: 'live', label: 'Live birds', match: ['broiler', 'country', 'chicks'] },
-  { id: 'produce', label: 'Eggs & produce', match: ['eggs', 'manure'] },
-  { id: 'supply', label: 'Feed & supplies', match: ['feed', 'manure'] },
+  { id: 'produce', label: 'Eggs', match: ['eggs'] },
+  { id: 'supply', label: 'Feed', match: ['feed'] },
 ]
 
 export default function Products() {
@@ -26,7 +26,7 @@ export default function Products() {
         <Reveal className="section-head">
           <span className="pill">What we sell</span>
           <h2>
-            Six things leave this farm — and every one of them is{' '}
+            Everything that leaves this farm is{' '}
             <span className="hl">weighed in front of you</span>
           </h2>
           <p>
@@ -74,7 +74,7 @@ export default function Products() {
                 ))}
               </ul>
 
-              <a className="product-link" href={`tel:${business.phone}`}>
+              <a className="product-link" href={phoneHref}>
                 Ask today's rate <Icon name="arrow" size={16} />
               </a>
             </Reveal>

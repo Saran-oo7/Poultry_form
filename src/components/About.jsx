@@ -18,9 +18,9 @@ export default function About() {
             </span>
           </div>
           <div className="about-chips">
-            <span><Icon name="shield" size={18} /> NLM registered</span>
-            <span><Icon name="check" size={18} /> FSSAI supply ready</span>
-            <span><Icon name="leaf" size={18} /> Deep litter system</span>
+            <span><Icon name="award" size={18} /> Since {business.founded}</span>
+            <span><Icon name="truck" size={18} /> 6 batches a year</span>
+            <span><Icon name="shield" size={18} /> Contract growing</span>
           </div>
         </Reveal>
 
@@ -28,18 +28,18 @@ export default function About() {
           <Reveal>
             <span className="pill">About the farm</span>
             <h2>
-              A small farm that runs on <span className="hl">clean sheds and</span>{' '}
-              <span className="hl">straight numbers</span>
+              A family farm at Thalaivasal, rearing birds{' '}
+              <span className="hl">since {business.founded}</span>
             </h2>
             <p>
-              We started in {business.founded} with two sheds and 4,000 birds. Today we
-              run six sheds across {business.location}, place chicks every fortnight,
-              and lift a batch almost every week of the year.
+              The farm runs around 10,000 birds a cycle and lifts six batches a
+              year, averaging about 15,000 kg of live weight a batch. Everything
+              goes out weighed at the gate.
             </p>
             <p>
-              Half our capacity is grown on contract for integrators; the rest we sell
-              ourselves to traders, meat shops, hotels and families who want to know
-              exactly how their chicken was raised.
+              Part of the capacity is grown on contract; the rest we sell ourselves
+              to traders, meat shops and families around {business.location} who
+              would rather buy straight from the shed.
             </p>
           </Reveal>
 

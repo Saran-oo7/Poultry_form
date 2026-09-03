@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Icon from './Icons.jsx'
 import Reveal from './Reveal.jsx'
-import { business, products } from '../data/site.js'
+import { business, products, phoneHref } from '../data/site.js'
 
 const empty = { name: '', phone: '', item: products[0].name, qty: '', note: '' }
 
@@ -56,7 +56,7 @@ export default function Contact() {
               <span className="ci"><Icon name="phone" size={20} /></span>
               <div>
                 <small>Phone</small>
-                <a href={`tel:${business.phone}`}>{business.phone}</a>
+                <a href={phoneHref}>{business.phone}</a>
               </div>
             </li>
             <li>
@@ -101,7 +101,7 @@ export default function Contact() {
                 value={form.phone}
                 onChange={set('phone')}
                 inputMode="tel"
-                placeholder="98765 43210"
+                placeholder="93441 43376"
               />
             </label>
 
@@ -133,8 +133,8 @@ export default function Contact() {
             {error && <p className="form-error">{error}</p>}
             {sent && (
               <p className="form-ok">
-                <Icon name="check" size={14} /> Enquiry opened in WhatsApp. We reply
-                within the hour.
+                <Icon name="check" size={14} /> Enquiry opened in WhatsApp. We will get back to
+                you shortly.
               </p>
             )}
 
