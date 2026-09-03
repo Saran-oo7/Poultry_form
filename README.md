@@ -24,6 +24,51 @@ npm run preview   # serve the production build
 > Needs Node.js 18 or newer. On Windows: `winget install OpenJS.NodeJS.LTS`
 > (close and reopen the terminal afterwards so `node` is on the PATH).
 
+## Putting it on GitHub
+
+The repo is already initialised with one commit. Create an empty repo on
+GitHub (no README, no .gitignore — this project has both), then:
+
+```bash
+git remote add origin https://github.com/<your-username>/<repo-name>.git
+git push -u origin main
+```
+
+## Deploying
+
+### Netlify or Vercel — use this for a private repo
+
+Both deploy private repositories on the free tier and both auto-detect Vite.
+Sign in with GitHub, import the repo, and accept the defaults:
+
+| Setting | Value |
+| --- | --- |
+| Build command | `npm run build` |
+| Publish / output directory | `dist` |
+| Node version | 20 or newer |
+
+Leave `VITE_BASE` unset — these hosts serve from the domain root and
+`vite.config.js` already falls back to `/`. Every push to `main` redeploys.
+
+### GitHub Pages — public repos only on a free account
+
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) is ready but set
+to **manual trigger only**, so it will not fail on every push while the repo is
+private. To switch it on once the repo is public:
+
+1. Uncomment the `push:` block at the top of the workflow.
+2. On GitHub go to **Settings → Pages → Build and deployment** and set
+   **Source** to **GitHub Actions** (not "Deploy from a branch").
+
+It then publishes to `https://<your-username>.github.io/<repo-name>/`. The
+workflow passes the repo name to Vite as `VITE_BASE` so the asset paths are
+right without you editing anything.
+
+### Custom domain
+
+Point the domain at whichever host you picked and leave `VITE_BASE` unset — a
+root domain serves assets from `/`.
+
 ## Sections
 
 | Section | What it shows |

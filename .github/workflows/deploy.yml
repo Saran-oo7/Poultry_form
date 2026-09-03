@@ -1,10 +1,13 @@
 name: Deploy to GitHub Pages
 
+# Manual-only on purpose: GitHub Pages needs a public repo on a free account,
+# and an automatic push trigger would just fail on every commit. If you make the
+# repo public (or move to a paid plan), uncomment the push block below and set
+# Settings -> Pages -> Source to "GitHub Actions".
 on:
-  push:
-    branches: [main]
-  # lets you re-run the deploy by hand from the Actions tab
   workflow_dispatch:
+  # push:
+  #   branches: [main]
 
 permissions:
   contents: read
