@@ -85,27 +85,29 @@ Rates are hardcoded. When the market moves, edit `price` on the product in
 
 ## Adding real photos
 
-The illustrations are components, so swapping in photographs is a small change.
-Drop your images in `src/assets/` and replace `<FarmScene />` in
-`src/components/Hero.jsx` with:
+Drop a photo in `src/assets/` and the matching section swaps the drawn artwork
+for it on the next reload. **The filename is the wiring** — there is no import
+to add and no component to edit:
 
-```jsx
-import shed from '../assets/shed.jpg'
-...
-<img className="scene" src={shed} alt="The broiler shed" />
-```
+| File | Where it shows |
+| --- | --- |
+| `hero.jpg` | Hero, in place of the drawn farm scene |
+| `about.jpg` | About, in place of the hatching-egg animation |
+| `brooder.jpg` `feeding.jpg` `eggs.jpg` `range.jpg` `health.jpg` `loading.jpg` | One per tile in "Around the farm" |
 
-`.scene` already carries the rounded corners and shadow.
+`.jpg`, `.jpeg`, `.png` and `.webp` all work. A name you leave out simply keeps
+its animation, so a half-finished set still builds and still looks right, and
+any other file in the folder is ignored.
 
-For the gallery it is simpler still — each tile in
-`src/components/Gallery.jsx` has a `photo: null` field. Import your image and
-set it, and the tile swaps the drawn vignette for the photograph:
+About 1600px wide is plenty — the gallery tiles crop to 230px tall and the
+About frame to 420px. Vite hashes and compresses them at build time.
 
-```jsx
-import brooder from '../assets/brooder.jpg'
-...
-{ id: 'brooder', title: 'Brooding shed', /* … */ photo: brooder },
-```
+Use photos of your own sheds. Photos taken on a phone at the farm look more
+convincing here than stock images, and stock or search-result images are
+usually someone else's copyright — a visible agency watermark on a live
+business site is both a legal problem and a bad look.
+
+The plumbing lives in [`src/assets/photos.js`](src/assets/photos.js).
 
 ## Structure
 

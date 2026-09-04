@@ -1,7 +1,11 @@
 import Icon from './Icons.jsx'
 import { HatchScene } from './Illustrations.jsx'
+import photo from '../assets/photos.js'
 import Reveal from './Reveal.jsx'
 import { business, strengths } from '../data/site.js'
+
+// src/assets/about.jpg if it is there, the hatching-egg animation if it is not
+const aboutPhoto = photo('about')
 
 export default function About() {
   const years = new Date().getFullYear() - business.founded
@@ -10,8 +14,12 @@ export default function About() {
     <section id="about" className="section section-about">
       <div className="container about-grid">
         <Reveal className="about-art">
-          <div className="about-photo">
-            <HatchScene />
+          <div className={`about-photo${aboutPhoto ? ' has-photo' : ''}`}>
+            {aboutPhoto ? (
+              <img className="scene" src={aboutPhoto} alt="The farm at Thalaivasal" />
+            ) : (
+              <HatchScene />
+            )}
             <span className="about-badge">
               <strong>{years}</strong>
               <small>years of<br />rearing</small>

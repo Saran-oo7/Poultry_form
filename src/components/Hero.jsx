@@ -1,7 +1,11 @@
 import Icon from './Icons.jsx'
 import { FarmScene } from './Illustrations.jsx'
+import photo from '../assets/photos.js'
 import { business, stats } from '../data/site.js'
 import useCountUp from '../hooks/useCountUp.js'
+
+// src/assets/hero.jpg if it is there, the drawn scene if it is not
+const heroPhoto = photo('hero')
 
 function Stat({ value, suffix = '', decimals = 0, label, icon }) {
   const { ref, display } = useCountUp(value, { decimals })
@@ -72,7 +76,11 @@ export default function Hero() {
         </div>
 
         <div className="hero-art">
-          <FarmScene />
+          {heroPhoto ? (
+            <img className="scene" src={heroPhoto} alt="Inside the broiler shed" />
+          ) : (
+            <FarmScene />
+          )}
           <div className="float-card float-card-1">
             <Icon name="hen" size={30} />
             <div>

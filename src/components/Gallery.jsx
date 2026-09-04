@@ -1,15 +1,13 @@
 import Icon from './Icons.jsx'
 import Reveal from './Reveal.jsx'
+import photo from '../assets/photos.js'
 
 /*
  * Six tiles from around the farm.
  *
- * Each tile draws an animated SVG vignette by default. To use a real
- * photograph instead, drop the file in src/assets/ and add a `photo` to the
- * entry below:
- *
- *   import brooder from '../assets/brooder.jpg'
- *   { ..., photo: brooder }
+ * Each tile draws an animated SVG vignette until there is a photograph to show.
+ * Save one as src/assets/<id>.jpg — brooder.jpg, feeding.jpg and so on — and
+ * the tile swaps itself over. See src/assets/photos.js.
  */
 const tiles = [
   {
@@ -18,7 +16,7 @@ const tiles = [
     note: 'Chicks under the brooder',
     tone: 'warm',
     icons: ['brooder', 'chick', 'chick'],
-    photo: null,
+    photo: photo('brooder'),
   },
   {
     id: 'feeding',
@@ -26,7 +24,7 @@ const tiles = [
     note: 'Feed down through the day',
     tone: 'sand',
     icons: ['feed', 'hen'],
-    photo: null,
+    photo: photo('feeding'),
   },
   {
     id: 'eggs',
@@ -34,7 +32,7 @@ const tiles = [
     note: 'Collected and trayed daily',
     tone: 'cream',
     icons: ['egg', 'egg', 'egg'],
-    photo: null,
+    photo: photo('eggs'),
   },
   {
     id: 'range',
@@ -42,7 +40,7 @@ const tiles = [
     note: 'Country birds on the range',
     tone: 'green',
     icons: ['rooster', 'leaf'],
-    photo: null,
+    photo: photo('range'),
   },
   {
     id: 'health',
@@ -50,7 +48,7 @@ const tiles = [
     note: 'Vaccination on schedule',
     tone: 'blue',
     icons: ['shield', 'chick'],
-    photo: null,
+    photo: photo('health'),
   },
   {
     id: 'loading',
@@ -58,7 +56,7 @@ const tiles = [
     note: 'Weighed, crated and away',
     tone: 'dusk',
     icons: ['truck', 'hen'],
-    photo: null,
+    photo: photo('loading'),
   },
 ]
 
