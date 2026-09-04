@@ -61,6 +61,7 @@ paths come out right.
 | Section | What it shows |
 | --- | --- |
 | Hero | Headline, animated farm scene, counters (birds/cycle, years, FCR, batches) |
+| Founder | Animated card for the founder — monogram or photo, and three facts |
 | Marquee | Scrolling ticker of what the farm supplies |
 | About | Farm story, hatching-egg animation, four strengths |
 | What We Sell | Five product cards with rates, weights and filter chips |
@@ -73,6 +74,7 @@ paths come out right.
 
 **Everything is in one file: [`src/data/site.js`](src/data/site.js).**
 
+- `founder` — name, role, the line under it, an optional quote and the facts
 - `business` — farm name, phone, WhatsApp number, email, address, hours
 - `stats` — the four counters under the hero
 - `products` — what you sell, with rate, weight band, blurb and tags
@@ -92,6 +94,7 @@ to add and no component to edit:
 | File | Where it shows |
 | --- | --- |
 | `hero.jpg` | Hero, in place of the drawn farm scene |
+| `founder.jpg` | Founder card, in place of the monogram medallion (also used in the footer) |
 | `about.jpg` | About, in place of the hatching-egg animation |
 | `brooder.jpg` `feeding.jpg` `eggs.jpg` `range.jpg` `health.jpg` `loading.jpg` | One per tile in "Around the farm" |
 

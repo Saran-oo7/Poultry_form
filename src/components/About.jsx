@@ -27,7 +27,7 @@ export default function About() {
           </div>
           <div className="about-chips">
             <span><Icon name="award" size={18} /> Since {business.founded}</span>
-            <span><Icon name="truck" size={18} /> 6 batches a year</span>
+            <span><Icon name="truck" size={18} /> 5 batches a year</span>
             <span><Icon name="shield" size={18} /> Contract growing</span>
           </div>
         </Reveal>
@@ -40,7 +40,7 @@ export default function About() {
               <span className="hl">since {business.founded}</span>
             </h2>
             <p>
-              The farm runs around 10,000 birds a cycle and lifts six batches a
+              The farm runs around 10,000 birds a cycle and lifts five batches a
               year, averaging about 15,000 kg of live weight a batch. Everything
               goes out weighed at the gate.
             </p>

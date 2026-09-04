@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
+import Founder from './components/Founder.jsx'
 import Marquee from './components/Marquee.jsx'
 import About from './components/About.jsx'
 import Products from './components/Products.jsx'
@@ -16,6 +17,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Founder />
         <Marquee />
         <About />
         <Products />

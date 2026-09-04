@@ -1,5 +1,14 @@
 import Icon from './Icons.jsx'
-import { business, nav, products, phoneHref } from '../data/site.js'
+import photo from '../assets/photos.js'
+import { business, founder, nav, products, phoneHref } from '../data/site.js'
+
+const founderPhoto = photo('founder')
+const founderInitials = founder.name
+  .split(/\s+/)
+  .filter(Boolean)
+  .slice(0, 2)
+  .map((w) => w[0].toUpperCase())
+  .join('')
 
 export default function Footer() {
   const go = (e, id) => {
@@ -23,6 +32,22 @@ export default function Footer() {
           </span>
           <strong>{business.name}</strong>
           <p>{business.tagline}</p>
+          <a className="footer-founder" href="#founder" onClick={(e) => go(e, 'founder')}>
+            {founderPhoto ? (
+              <img src={founderPhoto} alt={founder.name} loading="lazy" />
+            ) : (
+              <span className="footer-monogram" aria-hidden="true">
+                {founderInitials}
+              </span>
+            )}
+            <div>
+              <strong>{founder.name}</strong>
+              <span>
+                {founder.role} · since {founder.since}
+              </span>
+            </div>
+          </a>
+
           <div className="footer-social">
             <a href={`https://wa.me/${business.whatsapp}`} aria-label="WhatsApp" target="_blank" rel="noreferrer">
               <Icon name="whatsapp" size={18} />

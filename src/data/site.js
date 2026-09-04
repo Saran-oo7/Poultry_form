@@ -7,10 +7,10 @@ export const business = {
   name: 'SM Poultry Farm',
   tagline: 'Broiler and country chicken, direct from the farm.',
   intro:
-    'We have been rearing poultry at Thalaivasal since 2000. The farm runs around ' +
-    '10,000 birds a cycle and lifts six batches a year. We sell broiler and country ' +
+    'We have been rearing poultry at Thalaivasal since 2001. The farm runs around ' +
+    '10,000 birds a cycle and lifts five batches a year. We sell broiler and country ' +
     'chicken, day-old chicks, eggs and feed — weighed at the gate, no middleman.',
-  founded: 2000,
+  founded: 2001,
   location: 'Thalaivasal, Attur, Salem',
   phone: '+91 93441 43376',
   whatsapp: '919344143376',
@@ -21,9 +21,9 @@ export const business = {
 
 export const stats = [
   { value: 10000, label: 'Birds per cycle', icon: 'hen' },
-  { value: 26, suffix: ' yrs', label: 'Rearing since 2000', icon: 'award' },
+  { value: 25, suffix: ' yrs', label: 'Rearing since 2001', icon: 'award' },
   { value: 1.5, decimals: 1, label: 'Average FCR', icon: 'chart' },
-  { value: 6, label: 'Batches a year', icon: 'truck' },
+  { value: 5, label: 'Batches a year', icon: 'truck' },
 ]
 
 /* ---------------- What we sell ---------------- */
@@ -158,6 +158,28 @@ export const partners = [
   },
 ]
 
+/* ---------------- The person behind the farm ---------------- */
+export const founder = {
+  name: 'Rajasekaran Viswanathan',
+  role: 'Founder',
+  since: 2001,
+  line:
+    'Started the farm at Thalaivasal in 2001 and has run every batch since — ' +
+    'placing the chicks, walking the sheds and settling the weight at the gate ' +
+    'himself.',
+  /*
+   * His own words, if you want them on the card. Leave it empty and the card
+   * simply leaves the quote out — better a short card than a sentence he
+   * never said.
+   */
+  quote: '',
+  facts: [
+    { icon: 'award', text: 'Rearing since 2001' },
+    { icon: 'hen', text: '10,000 birds a cycle' },
+    { icon: 'truck', text: '5 batches a year' },
+  ],
+}
+
 /* ---------------- Why buy from us ---------------- */
 export const strengths = [
   {
@@ -168,7 +190,7 @@ export const strengths = [
   {
     icon: 'truck',
     title: 'Stock moving all year',
-    text: 'Six batches a year means there is almost always a lot coming up, instead of one seasonal lift you have to wait for.',
+    text: 'Five batches a year means there is almost always a lot coming up, instead of one seasonal lift you have to wait for.',
   },
   {
     icon: 'shield',

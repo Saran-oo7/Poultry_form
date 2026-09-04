@@ -7,7 +7,7 @@ const items = [
   { icon: 'rooster', text: 'Country chicken' },
   { icon: 'feed', text: 'Poultry feed' },
   { icon: 'chart', text: 'Weighed at the gate' },
-  { icon: 'truck', text: '6 batches a year' },
+  { icon: 'truck', text: '5 batches a year' },
   { icon: 'shield', text: 'Contract growing' },
 ]
 
