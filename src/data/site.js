@@ -14,7 +14,7 @@ export const business = {
   location: 'Thalaivasal, Attur, Salem',
   phone: '+91 93441 43376',
   whatsapp: '919344143376',
-  email: 'rajasekar362@gmail.com',
+  email: 'rajasekarv362@gmail.com',
   address: 'Thalaivasal, Attur, Salem, Tamil Nadu',
   hours: 'All days · 7:00 AM to 8:00 PM',
 }
